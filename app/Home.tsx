@@ -42,7 +42,7 @@ export default function Home({ posts }) {
               alt="Avatar of Musa A. Musa"
             />
             <p className=" text-sm mt-1 tracking-[0.25rem] leading-7 text-gray-500 dark:text-gray-400">
-              {siteMetadata.author}
+              {siteMetadata.author.toUpperCase()}
             </p>
           </div>
           <p className="text-base leading-7 text-gray-500 dark:text-gray-400">

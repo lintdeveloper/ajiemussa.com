@@ -5,11 +5,7 @@ const EmailNewsLetter = () => {
     <>
       <form onSubmit={(e) => e.preventDefault()}>
         <p className="text-sm leading-7 text-gray-500 dark:text-gray-400 pb-2">
-          Subscribe to get future posts via email (or grab the{' '}
-          <a href="#" className="underline decoration-solid">
-            RSS feed
-          </a>
-          )
+          Subscribe to get future posts via email
         </p>
         <div className="flex justify-center items-center">
           <input

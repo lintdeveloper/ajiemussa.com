@@ -5,5 +5,6 @@ import Home from './Home'
 export default async function Page() {
   const sortedPosts = sortPosts(allBlogs)
   const posts = allCoreContent(sortedPosts)
+
   return <Home posts={posts} />
 }

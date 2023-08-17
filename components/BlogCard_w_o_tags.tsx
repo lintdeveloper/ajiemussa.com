@@ -2,7 +2,12 @@ import Link from 'next/link'
 import { formatDate } from 'pliny/utils/formatDate'
 import siteMetadata from '@/data/siteMetadata'
 
-const BlogCard = ({ posts, MAX_DISPLAY }) => {
+interface props {
+  posts: []
+  MAX_DISPLAY?: number
+}
+
+const BlogCard = ({ posts, MAX_DISPLAY }: props) => {
   return (
     <ul>
       {!posts.length && 'No posts found.'}

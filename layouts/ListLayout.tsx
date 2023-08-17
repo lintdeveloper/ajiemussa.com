@@ -8,6 +8,7 @@ import type { Blog } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
+import BlogCard from '@/components/BlogCard_w_o_tags'
 
 interface PaginationProps {
   totalPages: number
@@ -78,7 +79,8 @@ export default function ListLayout({
 
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div>
+        {/* <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
@@ -109,7 +111,7 @@ export default function ListLayout({
               />
             </svg>
           </div>
-        </div>
+        </div> */}
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post) => {
@@ -130,9 +132,9 @@ export default function ListLayout({
                           {title}
                         </Link>
                       </h3>
-                      <div className="flex flex-wrap">
+                      {/* <div className="flex flex-wrap">
                         {tags?.map((tag) => <Tag key={tag} text={tag} />)}
-                      </div>
+                      </div> */}
                     </div>
                     <div className="prose max-w-none text-gray-500 dark:text-gray-400">
                       {summary}
@@ -143,10 +145,11 @@ export default function ListLayout({
             )
           })}
         </ul>
+
+        {pagination && pagination.totalPages > 1 && !searchValue && (
+          <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
+        )}
       </div>
-      {pagination && pagination.totalPages > 1 && !searchValue && (
-        <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
-      )}
     </>
   )
 }

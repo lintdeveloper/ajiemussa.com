@@ -2,12 +2,13 @@ import { ReactNode } from 'react'
 import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
-import Comments from '@/components/Comments'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import EmailNewsLetter from '@/components/EmailNewsLetter'
+import SocialLinks from '@/components/SocialLinks'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -43,11 +44,6 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">{children}</div>
             </div>
-            {siteMetadata.comments && (
-              <div className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300" id="comment">
-                <Comments slug={slug} />
-              </div>
-            )}
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
                 {prev && prev.path && (
@@ -72,6 +68,29 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                     </Link>
                   </div>
                 )}
+              </div>
+
+              <div className="flex justify-center flex-col items-center pt-16 gap-4">
+                <p className=" text-sm mt-1 tracking-[0.15em] leading-7 text-gray-500 dark:text-gray-400">
+                  ABOUT MUSA .A. MUSA
+                </p>
+
+                <p className="text-base leading-7 text-gray-500 dark:text-gray-400">
+                  A programmer who writes about software development and many other topics. I work
+                  at{' '}
+                  <a
+                    href="https://vircap.io"
+                    target="_blank"
+                    className="underline decoration-solid"
+                  >
+                    vircap.io
+                  </a>
+                  .
+                </p>
+
+                <SocialLinks />
+                <div className="w-[250px] mt-6 h-0 border-[0.5px] border-gray-200 dark:border-gray-600"></div>
+                <EmailNewsLetter />
               </div>
             </footer>
           </div>

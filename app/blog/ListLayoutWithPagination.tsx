@@ -10,6 +10,8 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 
+import BlogCard from '@/components/BlogCard_w_o_tags'
+
 interface PaginationProps {
   totalPages: number
   currentPage: number
@@ -74,38 +76,54 @@ export default function ListLayoutWithTags({
   return (
     <>
       <div>
-        {/* <div className="pb-6 pt-6">
+        <div className="pb-6 pt-6">
           <h1 className="sm:hidden text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
-        </div> */}
+        </div>
         <div className="flex sm:space-x-24">
           <div>
             <ul>
               {displayPosts.map((post) => {
-                const { path, date, title, summary, tags } = post
+                const { path, date, title, summary, tags, slug } = post
                 return (
-                  <li key={path} className="py-5">
-                    <article className="space-y-2 flex flex-col xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                        </dd>
-                      </dl>
-                      <div className="space-y-3">
-                        <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
-                              {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap">
-                            {tags?.map((tag) => <Tag key={tag} text={tag} />)}
+                  <li
+                    key={path}
+                    className="p-12 border border-gray-300 dark:border-gray-600 rounded-lg  shadow-lg mb-6"
+                  >
+                    <article className="text-center flex flex-col justify-center items-center">
+                      <div className="space-y-2 ">
+                        <dl>
+                          <dt className="sr-only">Published on</dt>
+                          <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                            <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                          </dd>
+                        </dl>
+                        <div className="space-y-5 ">
+                          <div className="space-y-6">
+                            <div>
+                              <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                                <Link
+                                  href={`/blog/${slug}`}
+                                  className="text-gray-900 dark:text-gray-100"
+                                >
+                                  {title}
+                                </Link>
+                              </h2>
+                            </div>
+                            <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                              {summary}
+                            </div>
                           </div>
-                        </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
+                          <div className="text-base font-medium leading-6">
+                            <Link
+                              href={`/blog/${slug}`}
+                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              aria-label={`Read "${title}"`}
+                            >
+                              Read more &rarr;
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </article>

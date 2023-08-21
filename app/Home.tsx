@@ -16,7 +16,7 @@ export default function Home({ posts }) {
   return (
     <>
       <div>
-        <div className="text-center  flex flex-col justify-center items-center  space-y-2 pb-8 pt-6 md:space-y-5 mb-10">
+        <div className="text-center  flex flex-col justify-center items-center  space-y-2  pb-8  md:space-y-5 mb-10">
           <div className="flex flex-col items-center">
             <Image
               className="rounded-full w-16 h-16 "

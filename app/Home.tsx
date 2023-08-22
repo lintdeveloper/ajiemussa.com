@@ -6,7 +6,7 @@ import Image from 'next/image'
 // import NewsletterForm from 'pliny/ui/NewsletterForm'
 
 import musa_avatar from '@/data/musa_avatar.png'
-import BlogCard from '@/components/BlogCard_w_o_tags'
+import BlogList from '@/components/BlogList'
 import EmailNewsLetter from '@/components/EmailNewsLetter'
 import SocialLinks from '@/components/SocialLinks'
 
@@ -39,7 +39,7 @@ export default function Home({ posts }) {
           <EmailNewsLetter />
         </div>
 
-        <BlogCard posts={posts} MAX_DISPLAY={MAX_DISPLAY} />
+        <BlogList posts={posts} MAX_DISPLAY={MAX_DISPLAY} />
       </div>
 
       {posts.length > MAX_DISPLAY && (

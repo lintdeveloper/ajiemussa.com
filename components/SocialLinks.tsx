@@ -1,43 +1,36 @@
 import siteMetadata from '@/data/siteMetadata'
 const { email, github, twitter, linkedin } = siteMetadata
+import { UilTwitterAlt } from '@iconscout/react-unicons'
+import { UilEnvelope } from '@iconscout/react-unicons'
+import { UilLinkedin } from '@iconscout/react-unicons'
+import { UilGithub } from '@iconscout/react-unicons'
+
 const SOCIAL_LINKS = [
   {
-    text: 'Send me an email',
+    icon: <UilEnvelope />,
     url: email,
   },
   {
-    text: 'Github',
+    icon: <UilGithub />,
     url: github,
   },
   {
-    text: 'Twitter',
+    icon: <UilTwitterAlt />,
     url: twitter,
   },
   {
-    text: 'Linkedln',
+    icon: <UilLinkedin />,
     url: linkedin,
   },
 ]
 
 const SocialLinks = () => {
   return (
-    <p className="flex justify-center gap-3  text-base leading-7 text-gray-500 dark:text-gray-400">
-      {SOCIAL_LINKS.map(({ text, url }) => {
-        if (text === 'Send me an email')
-          return (
-            <a
-              href={`mailto: ${url}`}
-              target="_blank"
-              className="underline decoration-solid"
-              key={text}
-            >
-              {text}
-            </a>
-          )
-
+    <p className="flex justify-center gap-5  text-base leading-7 text-gray-500 dark:text-gray-400">
+      {SOCIAL_LINKS.map(({ icon, url }) => {
         return (
-          <a href={url} target="_blank" className="underline decoration-solid" key={text}>
-            {text}
+          <a href={url} target="_blank" className="underline decoration-solid" key={url}>
+            {icon}
           </a>
         )
       })}

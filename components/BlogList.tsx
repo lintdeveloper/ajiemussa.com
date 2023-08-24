@@ -64,13 +64,7 @@ const BlogCard = ({ posts, MAX_DISPLAY }: props) => {
                     </dd>
                   </dl>
                   <div className="mt-4 bg-slate-300 rounded-sm overflow-hidden">
-                    <Image
-                      src={images[1]}
-                      alt="thumbnail images"
-                      width="150"
-                      height="200"
-                      className=""
-                    />
+                    <Image src={images[1]} alt="thumbnail images" width="150" height="200" />
                   </div>
                 </div>
               </Link>

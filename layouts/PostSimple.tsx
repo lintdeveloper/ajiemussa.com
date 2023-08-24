@@ -72,20 +72,13 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
 
               <div className="flex justify-center flex-col items-center pt-16 gap-4">
                 <p className=" text-sm mt-1 tracking-[0.15em] leading-7 text-gray-500 dark:text-gray-400">
-                  ABOUT MUSA .A. MUSA
+                  ABOUT MUSA MUSA
                 </p>
 
-                <p className="text-base leading-7 text-gray-500 dark:text-gray-400">
-                  A programmer who writes about software development and many other topics. I work
-                  at{' '}
-                  <a
-                    href="https://vircap.io"
-                    target="_blank"
-                    className="underline decoration-solid"
-                  >
-                    vircap.io
-                  </a>
-                  .
+                <p className="text-center text-base leading-7 text-gray-500 dark:text-gray-400">
+                  Hey, I am Musa 👋 nice to meet you!.
+                  <br /> I write weekly on product engineering, working with people and personal
+                  growth. .
                 </p>
 
                 <SocialLinks />

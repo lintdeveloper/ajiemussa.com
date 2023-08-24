@@ -1,6 +1,7 @@
-import ListLayoutWithPagination from '../../ListLayoutWithPagination'
+// import ListLayoutWithPagination from '../../ListLayoutWithPagination'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
+import ListLayoutWithPagination from '../../substackListLayoutWithPagination'
 
 const POSTS_PER_PAGE = 5
 
@@ -23,6 +24,14 @@ export default function Page({ params }: { params: { page: string } }) {
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
 
+  // return (
+  //   <ListLayoutWithPagination
+  //     posts={posts}
+  //     initialDisplayPosts={initialDisplayPosts}
+  //     pagination={pagination}
+  //     title="All Posts"
+  //   />
+  // )
   return (
     <ListLayoutWithPagination
       posts={posts}

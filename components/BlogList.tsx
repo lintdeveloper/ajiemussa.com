@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 // import { formatDate } from 'pliny/utils/formatDate'
 import siteMetadata from '@/data/siteMetadata'
@@ -41,13 +39,13 @@ const BlogCard = ({ posts, MAX_DISPLAY }: props) => {
                       {tags[0].toUpperCase()}
                     </span>
                   </div>
-                  <h2 className=" text-md font-medium leading-8 tracking-tight">
+                  <h2 className="text-base font-medium leading-8 tracking-tight">
                     <div className="text-gray-900 dark:text-gray-100">{title}</div>
                   </h2>
                   <div className="text-sm md:prose max-w-none text-gray-500 dark:text-gray-400">
                     {summary}
                   </div>
-                  <div className="pb-4 whitespace-nowrap text-sm md:text-md flex items-center gap-[10px]  prose max-w-none text-gray-500 dark:text-gray-400">
+                  <div className="pb-4 whitespace-nowrap text-xs flex items-center gap-[10px]  prose max-w-none text-gray-500 dark:text-gray-400">
                     <span>{author.toUpperCase()}</span>
                     <span className="font-extrabold relative -top-[4.5px]">.</span>
                     <span>{readingTime?.text?.toUpperCase()}</span>
@@ -58,14 +56,14 @@ const BlogCard = ({ posts, MAX_DISPLAY }: props) => {
                 <div className="">
                   <dl className="">
                     <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    <dd className="text-end text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       {/* <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time> */}
-                      <time dateTime={date} className="text-xs md:text-sm">
+                      <time dateTime={date} className="text-xs md:text-sm ">
                         {formatDateToCustomFormat(date)}
                       </time>
                     </dd>
                   </dl>
-                  <div className="bg-slate-300 rounded-md overflow-hidden">
+                  <div className="mt-4 bg-slate-300 rounded-sm overflow-hidden">
                     <Image
                       src={images[1]}
                       alt="thumbnail images"

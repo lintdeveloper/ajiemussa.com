@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Musa Musa | Portfolio',
+  title: 'Musa Musa ',
   author: 'Musa  Musa',
   headerTitle: 'TailwindBlog',
   description: 'The Portfolio Site of Musa Musa',

@@ -10,7 +10,7 @@ const EmailNewsLetter = () => {
         <div className="flex justify-center items-center">
           <input
             placeholder="Type your email..."
-            className="border-[1.5px] focus:border-blue-400 rounded-l-full  border-gray-300 bg-white px-4 py-2 placeholder:text-gray-400 text-gray-500 focus:border-[1.5px] focus:dark:border-primary-500 focus:ring-0 focus:relative focus:z-[1] dark:border-gray-900  dark:bg-gray-700 dark:text-gray-100"
+            className="border-[1.5px] focus:border-blue-400 rounded-l-full  border-gray-300 bg-white px-4 py-2 placeholder:text-gray-400 text-gray-500 focus:border-[1.5px] focus:dark:border-primary-500 focus:ring-0 focus:relative  dark:border-gray-900  dark:bg-gray-700 dark:text-gray-100"
           />
           <button
             type="submit"

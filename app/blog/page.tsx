@@ -1,5 +1,3 @@
-// 'use client'
-
 // import ListLayoutWithPagination from './ListLayoutWithPagination'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'

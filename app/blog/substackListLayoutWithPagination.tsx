@@ -88,7 +88,7 @@ export default function ListLayoutWithTags({
           <div>
             <ul>
               {displayPosts.map((post) => {
-                const { path, date, title, summary, tags, slug, readingTime, images } = post
+                const { path, date, title, summary, tags, slug, readingTime, images = [] } = post
                 return (
                   <li
                     key={slug}

@@ -1,12 +1,22 @@
 import Link from 'next/link'
 // import { formatDate } from 'pliny/utils/formatDate'
 import siteMetadata from '@/data/siteMetadata'
+import { CoreContent } from 'pliny/utils/contentlayer'
+import type { Blog } from 'contentlayer/generated'
 import Image from 'next/image'
 
 import formatDateToCustomFormat from '../scripts/formatDate'
 
+interface PaginationProps {
+  totalPages: number
+  currentPage: number
+}
+
 interface props {
-  posts: []
+  posts: CoreContent<Blog>[]
+  initialDisplayPosts?: CoreContent<Blog>[]
+  pagination?: PaginationProps
+  title?: string
   MAX_DISPLAY?: number
 }
 
@@ -16,21 +26,21 @@ const BlogCard = ({ posts, MAX_DISPLAY }: props) => {
     <ul>
       {!posts.length && 'No posts found.'}
       {posts.slice(0, MAX_DISPLAY).map((post) => {
-        const { slug, date, title, summary, images, readingTime, tags } = post
+        const { slug, date, title, summary, images = [], readingTime, tags } = post
 
         return (
           <li
             key={slug}
             className="p-0 sm:p-6 border-b-2 border-gray-300 dark:border-gray-600  mb-6"
           >
-            <article className="text-left flex flex-col justify-center items-center">
+            <article className=" text-left flex flex-col justify-between items-center">
               <Link
                 href={`/blog/${slug}`}
-                className="flex justify-between gap-10 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                className="flex justify-between w-full  gap-10 "
                 aria-label={`Read "${title}"`}
               >
                 {/* Left Side */}
-                <div className=" basis-3/4  flex flex-col gap-4">
+                <div className="flex  basis-3/4  flex-col gap-4">
                   <div className="flex items-center gap-4">
                     <div className="bg-slate-800 rounded-md overflow-hidden w-[20px] h-[20px] md:w-[25px] md:h-[25px]">
                       <Image src={images[0]} alt="thumbnail" width="25" height="25" />

@@ -1,7 +1,6 @@
 'use client'
-
 // import ListLayoutWithPagination from './ListLayoutWithPagination'
-import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
+import { allCoreContent, sortPosts, CoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
 import { genPageMetadata } from 'app/seo'
 
@@ -9,6 +8,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import BlogCard from '@/components/BlogList'
+import Image from 'next/image'
+
+import formatDateToCustomFormat from '../../scripts/formatDate'
 
 const POSTS_PER_PAGE = 5
 
@@ -70,6 +72,7 @@ export default function BlogPage() {
     currentPage: pageNumber,
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
+  const MAX_DISPLAY: number = 5
 
   // return (
   //   <ListLayoutWithPagination

@@ -3,8 +3,6 @@ import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import Image from 'next/image'
 
-// import NewsletterForm from 'pliny/ui/NewsletterForm'
-
 import musa_avatar from '@/data/musa_avatar.png'
 import BlogList from '@/components/BlogList'
 import EmailNewsLetter from '@/components/EmailNewsLetter'
@@ -50,11 +48,6 @@ export default function Home({ posts }) {
           </Link>
         </div>
       )}
-      {/* {siteMetadata.newsletter?.provider && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
-        </div>
-      )} */}
     </>
   )
 }

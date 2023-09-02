@@ -9,6 +9,7 @@ import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
+import Footer from '@/components/Footer'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -76,11 +77,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
-            <div className="flex h-screen flex-col justify-between font-sans">
+            <Header />
+            <div className=" flex h-screen flex-col justify-between font-sans">
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-                <Header />
                 <main className="mb-auto">{children}</main>
               </SearchProvider>
+              <Footer />
             </div>
           </SectionContainer>
         </ThemeProviders>
